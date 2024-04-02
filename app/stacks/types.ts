@@ -19,6 +19,173 @@ import {
 import { ModalStackParamList } from './MasterDetailStack/types';
 import { TNavigation } from './stackType';
 
+export type HomeStackParamList = {
+	ModalStackNavigator: NavigatorScreenParams<ModalStackParamList & TNavigation>;
+	E2ESaveYourPasswordStackNavigator: NavigatorScreenParams<E2ESaveYourPasswordStackParamList>;
+	E2EEnterYourPasswordStackNavigator: NavigatorScreenParams<E2EEnterYourPasswordStackParamList>;
+	SettingsView: any;
+	NewMessageStackNavigator: any;
+	NewMessageStack: undefined;
+	RoomsListView: undefined;
+	NewConversationView: undefined;
+	RoomView:
+		| {
+				rid: string;
+				t: SubscriptionType;
+				tmid?: string;
+				messageId?: string;
+				name?: string;
+				fname?: string;
+				prid?: string;
+				room?: TSubscriptionModel | { rid: string; t: string; name?: string; fname?: string; prid?: string };
+				jumpToMessageId?: string;
+				jumpToThreadId?: string;
+				roomUserId?: string | null;
+				usedCannedResponse?: string;
+				status?: string;
+		  }
+		| undefined; // Navigates back to RoomView already on stack
+	RoomActionsView: {
+		room: TSubscriptionModel;
+		member?: any;
+		rid: string;
+		t: SubscriptionType;
+		joined: boolean;
+		omnichannelPermissions?: {
+			canForwardGuest: boolean;
+			canReturnQueue: boolean;
+			canViewCannedResponse: boolean;
+			canPlaceLivechatOnHold: boolean;
+		};
+	};
+	SelectListView: {
+		data?: TDataSelect[];
+		title: string;
+		infoText?: string;
+		nextAction: (selected: string[]) => void;
+		showAlert?: () => void;
+		isSearch?: boolean;
+		onSearch?: (text: string) => Promise<TDataSelect[] | any>;
+		isRadio?: boolean;
+	};
+	RoomInfoView: {
+		room?: ISubscription;
+		member?: any;
+		rid: string;
+		t: SubscriptionType;
+		showCloseModal?: boolean;
+		fromRid?: string;
+		itsMe?: boolean;
+	};
+	RoomInfoEditView: {
+		rid: string;
+	};
+	RoomMembersView: {
+		rid: string;
+		room: ISubscription;
+		joined?: boolean;
+	};
+	DiscussionsView: {
+		rid: string;
+		t: SubscriptionType;
+	};
+	SearchMessagesView: {
+		rid: string;
+		t: SubscriptionType;
+		encrypted?: boolean;
+		showCloseModal?: boolean;
+	};
+	SelectedUsersView: {
+		maxUsers?: number;
+		showButton?: boolean;
+		title?: string;
+		buttonText?: string;
+		showSkipText?: boolean;
+		nextAction?(): void;
+	};
+	InviteUsersView: {
+		rid: string;
+	};
+	InviteUsersEditView: {
+		rid: string;
+	};
+	MessagesView: {
+		rid: string;
+		t: SubscriptionType;
+		name: string;
+	};
+	AutoTranslateView: {
+		rid: string;
+		room: TSubscriptionModel;
+	};
+	DirectoryView: undefined;
+	NotificationPrefView: {
+		rid: string;
+		room: TSubscriptionModel;
+	};
+	PushTroubleshootView: undefined;
+	CloseLivechatView: {
+		rid: string;
+		departmentId?: string;
+		departmentInfo?: ILivechatDepartment;
+		tagsList?: ILivechatTag[];
+	};
+	LivechatEditView: {
+		room: ISubscription;
+		roomUser: any; // TODO: Change
+	};
+	ThreadMessagesView: {
+		rid: string;
+		t: SubscriptionType;
+	};
+	TeamChannelsView: {
+		teamId: string;
+		joined: boolean;
+	};
+	CreateChannelView: {
+		isTeam?: boolean; // TODO: To check
+		teamId?: string;
+	};
+	AddChannelTeamView: {
+		teamId: string;
+	};
+	AddExistingChannelView: {
+		teamId: string;
+	};
+	MarkdownTableView: {
+		renderRows: (drawExtraBorders?: boolean) => JSX.Element;
+		tableWidth: number;
+	};
+	ReadReceiptsView: {
+		messageId: string;
+	};
+	QueueListView: undefined;
+	CannedResponsesListView: {
+		rid: string;
+	};
+	CannedResponseDetail: {
+		cannedResponse: ICannedResponse;
+		room: ISubscription;
+	};
+	JitsiMeetView: {
+		rid: string;
+		url: string;
+		onlyAudio?: boolean;
+		videoConf?: boolean;
+	};
+	ChangeAvatarView: {
+		context: TChangeAvatarViewContext;
+		titleHeader?: string;
+		room?: ISubscription;
+		t?: SubscriptionType;
+	};
+	ReportUserView: {
+		username: string;
+		userId: string;
+		name: string;
+	};
+};
+
 export type ChatsStackParamList = {
 	ModalStackNavigator: NavigatorScreenParams<ModalStackParamList & TNavigation>;
 	E2ESaveYourPasswordStackNavigator: NavigatorScreenParams<E2ESaveYourPasswordStackParamList>;
@@ -221,6 +388,7 @@ export type DisplayPrefStackParamList = {
 };
 
 export type DrawerParamList = {
+	HomeStackNavigator: NavigatorScreenParams<HomeStackParamList>;
 	ChatsStackNavigator: NavigatorScreenParams<ChatsStackParamList>;
 	ProfileStackNavigator: NavigatorScreenParams<ProfileStackParamList>;
 	SettingsStackNavigator: NavigatorScreenParams<SettingsStackParamList>;
