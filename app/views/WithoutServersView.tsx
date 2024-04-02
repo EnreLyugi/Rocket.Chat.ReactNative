@@ -32,7 +32,7 @@ const WithoutServerView = (): React.ReactElement => {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: 'Rocket.Chat',
+			title: 'VTCall Chat',
 			headerLeft: () => <HeaderButton.CancelModal onPress={ShareExtension.close} testID='share-extension-close' />
 		});
 	}, [navigation]);

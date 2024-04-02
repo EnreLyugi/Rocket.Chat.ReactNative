@@ -124,7 +124,8 @@ const SettingsView = (): React.ReactElement => {
 			device: ${getDeviceModel}
 		`);
 		try {
-			await Linking.openURL(`mailto:${email}?subject=${subject}&body=${description}`);
+			//await Linking.openURL(`mailto:${email}?subject=${subject}&body=${description}`);
+			await Linking.openURL(`https://wa.me/558005809292`);
 		} catch (e) {
 			logEvent(events.SE_CONTACT_US_F);
 			showErrorAlert(I18n.t('error-email-send-failed', { message: 'support@rocket.chat' }));

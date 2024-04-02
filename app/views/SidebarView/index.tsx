@@ -248,6 +248,14 @@ class Sidebar extends Component<ISidebarProps, ISidebarState> {
 					current={this.currentItemKey === 'ChatsStackNavigator'}
 				/>
 				<SidebarItem
+					text={I18n.t('New_conversation')}
+					left={<CustomIcon name='send' size={20} color={themes[theme!].titleText} />}
+					onPress={() => this.sidebarNavigate('HomeStackNavigator')}
+					testID='sidebar-home'
+					theme={theme!}
+					current={this.currentItemKey === 'HomeStackNavigator'}
+				/>
+				<SidebarItem
 					text={I18n.t('Profile')}
 					left={<CustomIcon name='user' size={20} color={themes[theme!].titleText} />}
 					onPress={() => this.sidebarNavigate('ProfileStackNavigator')}
