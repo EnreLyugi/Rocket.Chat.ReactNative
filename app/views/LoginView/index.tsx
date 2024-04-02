@@ -22,7 +22,7 @@ const LoginView = () => {
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
-			title: title ?? 'VTCall Chat',
+			title: title ?? 'Rocket.Chat',
 			headerRight: () => <HeaderButton.Legal testID='login-view-more' navigation={navigation} />
 		});
 	}, [navigation, title]);

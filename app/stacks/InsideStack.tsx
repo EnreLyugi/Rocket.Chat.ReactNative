@@ -9,7 +9,6 @@ import Sidebar from '../views/SidebarView';
 // Chats Stack
 import RoomView from '../views/RoomView';
 import RoomsListView from '../views/RoomsListView';
-import NewConversationView from '../views/NewConversationView';
 import RoomActionsView from '../views/RoomActionsView';
 import RoomInfoView from '../views/RoomInfoView';
 import ReportUserView from '../views/ReportUserView';
@@ -76,7 +75,6 @@ import DiscussionsView from '../views/DiscussionsView';
 import ChangeAvatarView from '../views/ChangeAvatarView';
 import {
 	AdminPanelStackParamList,
-	HomeStackParamList,
 	ChatsStackParamList,
 	DisplayPrefStackParamList,
 	DrawerParamList,
@@ -144,62 +142,6 @@ const ChatsStackNavigator = () => {
 				options={{ headerShown: false, animationEnabled: isIOS }}
 			/>
 		</ChatsStack.Navigator>
-	);
-};
-
-const HomeStack = createStackNavigator<HomeStackParamList & TNavigation>();
-const HomeStackNavigator = () => {
-	const { theme } = React.useContext(ThemeContext);
-	return (
-		<HomeStack.Navigator
-			screenOptions={{ ...defaultHeader, ...themedHeader(theme), ...StackAnimation } as StackNavigationOptions}
-		>
-			<HomeStack.Screen name='NewConversationView' component={NewConversationView} />
-			<HomeStack.Screen name='RoomView' component={RoomView} />
-			<HomeStack.Screen name='RoomActionsView' component={RoomActionsView} options={RoomActionsView.navigationOptions} />
-			<HomeStack.Screen name='SelectListView' component={SelectListView} options={SelectListView.navigationOptions} />
-			<HomeStack.Screen name='RoomInfoView' component={RoomInfoView} />
-			<HomeStack.Screen name='ReportUserView' component={ReportUserView} />
-			{/* @ts-ignore */}
-			<HomeStack.Screen name='RoomInfoEditView' component={RoomInfoEditView} options={RoomInfoEditView.navigationOptions} />
-			<HomeStack.Screen name='ChangeAvatarView' component={ChangeAvatarView} />
-			<HomeStack.Screen name='RoomMembersView' component={RoomMembersView} />
-			<HomeStack.Screen name='DiscussionsView' component={DiscussionsView} />
-			<HomeStack.Screen
-				name='SearchMessagesView'
-				component={SearchMessagesView}
-				options={SearchMessagesView.navigationOptions}
-			/>
-			<HomeStack.Screen name='SelectedUsersView' component={SelectedUsersView} />
-			<HomeStack.Screen name='InviteUsersView' component={InviteUsersView} />
-			<HomeStack.Screen name='InviteUsersEditView' component={InviteUsersEditView} />
-			<HomeStack.Screen name='MessagesView' component={MessagesView} />
-			<HomeStack.Screen name='AutoTranslateView' component={AutoTranslateView} />
-			<HomeStack.Screen name='DirectoryView' component={DirectoryView} options={DirectoryView.navigationOptions} />
-			<HomeStack.Screen name='NotificationPrefView' component={NotificationPrefView} />
-			<HomeStack.Screen name='PushTroubleshootView' component={PushTroubleshootView} />
-			<HomeStack.Screen name='ForwardLivechatView' component={ForwardLivechatView} />
-			<HomeStack.Screen name='CloseLivechatView' component={CloseLivechatView} />
-			<HomeStack.Screen name='LivechatEditView' component={LivechatEditView} options={LivechatEditView.navigationOptions} />
-			<HomeStack.Screen name='PickerView' component={PickerView} />
-			{/* @ts-ignore */}
-			<HomeStack.Screen name='ThreadMessagesView' component={ThreadMessagesView} />
-			<HomeStack.Screen name='TeamChannelsView' component={TeamChannelsView} />
-			<HomeStack.Screen name='CreateChannelView' component={CreateChannelView} />
-			<HomeStack.Screen name='AddChannelTeamView' component={AddChannelTeamView} />
-			<HomeStack.Screen name='AddExistingChannelView' component={AddExistingChannelView} />
-			{/* @ts-ignore */}
-			<HomeStack.Screen name='MarkdownTableView' component={MarkdownTableView} />
-			<HomeStack.Screen name='ReadReceiptsView' component={ReadReceiptsView} options={ReadReceiptsView.navigationOptions} />
-			<HomeStack.Screen name='QueueListView' component={QueueListView} />
-			<HomeStack.Screen name='CannedResponsesListView' component={CannedResponsesListView} />
-			<HomeStack.Screen name='CannedResponseDetail' component={CannedResponseDetail} />
-			<HomeStack.Screen
-				name='JitsiMeetView'
-				component={JitsiMeetView}
-				options={{ headerShown: false, animationEnabled: isIOS }}
-			/>
-		</HomeStack.Navigator>
 	);
 };
 
@@ -294,7 +236,6 @@ const DrawerNavigator = () => {
 			}}
 		>
 			<Drawer.Screen name='ChatsStackNavigator' component={ChatsStackNavigator} />
-			<Drawer.Screen name='HomeStackNavigator' component={HomeStackNavigator} />
 			<Drawer.Screen name='ProfileStackNavigator' component={ProfileStackNavigator} />
 			<Drawer.Screen name='SettingsStackNavigator' component={SettingsStackNavigator} />
 			<Drawer.Screen name='AdminPanelStackNavigator' component={AdminPanelStackNavigator} />

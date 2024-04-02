@@ -209,7 +209,7 @@ const ServerDropdown = () => {
 					ItemSeparatorComponent={List.Separator}
 					keyboardShouldPersistTaps='always'
 				/>
-				{/*<List.Separator />
+				<List.Separator />
 				<Button
 					title={I18n.t('Create_a_new_workspace')}
 					type='secondary'
@@ -218,7 +218,7 @@ const ServerDropdown = () => {
 					style={styles.buttonCreateWorkspace}
 					color={colors.tintColor}
 					styleText={[styles.serverHeaderAdd, { textAlign: 'center' }]}
-				/>*/}
+				/>
 			</Animated.View>
 		</>
 	);

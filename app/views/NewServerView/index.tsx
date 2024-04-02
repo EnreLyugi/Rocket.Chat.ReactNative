@@ -303,7 +303,7 @@ class NewServerView extends React.Component<INewServerViewProps, INewServerViewS
 					}
 				]}
 			>
-				{/*<Text
+				<Text
 					style={[
 						styles.chooseCertificateTitle,
 						{ color: themes[theme].auxiliaryText, fontSize: moderateScale({ size: 13, width }) }
@@ -320,7 +320,7 @@ class NewServerView extends React.Component<INewServerViewProps, INewServerViewS
 					>
 						{certificate ?? I18n.t('Apply_Your_Certificate')}
 					</Text>
-				</TouchableOpacity>*/}
+				</TouchableOpacity>
 			</View>
 		);
 	};
@@ -356,9 +356,9 @@ class NewServerView extends React.Component<INewServerViewProps, INewServerViewS
 							}
 						]}
 					>
-						VTCall Chat
+						Rocket.Chat
 					</Text>
-					{/*<Text
+					<Text
 						style={[
 							styles.subtitle,
 							{
@@ -369,7 +369,7 @@ class NewServerView extends React.Component<INewServerViewProps, INewServerViewS
 						]}
 					>
 						{I18n.t('Onboarding_subtitle')}
-					</Text>*/}
+					</Text>
 					<ServerInput
 						text={text}
 						theme={theme}
